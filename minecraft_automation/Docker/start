@@ -1,0 +1,20 @@
+#!/bin/bash
+# -----------------------------------------------------------------------------
+# docker-minecraft /start script
+# -----------------------------------------------------------------------------
+
+cd /data/
+
+if [ ! -f /data/server.jar ]
+then
+#    curl "https://piston-data.mojang.com/v1/objects/8399e1211e95faa421c1507b322dbeae86d604df/server.jar" -o /data/minecraft_server.jar
+     mv /server.jar /data/server.jar
+fi
+
+if [ ! -f /data/eula.txt ]
+then
+    echo "eula=true" > /data/eula.txt
+fi
+
+java -Xmx4G -jar server.jar nogui
+

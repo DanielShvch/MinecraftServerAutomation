@@ -1,0 +1,18 @@
+Change the .env file to a token of your wish, this token will be used for authentication.
+make sure the user which runs the API has read access to this file, no one else should have it.
+
+curl request should be - 
+
+for new server - 
+curl -X POST http://<ServerIP>:8000/start-new-server/ -H "Content-Type: application/json" -H "Authorization: Bearer <.env_token>" -d "{\"username\": \"InGameUsername\", \"version\": \"1\"}"
+
+for adding to whitelist - 
+curl -X POST http://<ServerIP>:8000/add-to-whitelist/ -H "Content-Type: application/json" -H "Authorization: Bearer <.env_token>" -d "{ \"ID\": \"<WorldID>\",\"username\": \"<InGameUsername>\"}"
+
+Change IP at Server IP , token at .env_token
+Basicly everything marked with <> should be customized
+
+
+I used uvicorn to run the API server, you can use anything you want -
+uvicorn API_v2:app --reload --host 0.0.0.0 --port 8000
+I added this as a service on my host.

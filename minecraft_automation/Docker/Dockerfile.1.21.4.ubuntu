@@ -1,0 +1,32 @@
+# -----------------------------------------------------------------------------
+# docker-minecraft
+#
+# Builds a basic docker image that can run a Minecraft server
+# (http://minecraft.net/).
+# -----------------------------------------------------------------------------
+
+# Base image is the latest LTS version of Ubuntu
+FROM ubuntu:24.04
+
+# Make sure we don't get notifications we can't answer during building.
+ENV DEBIAN_FRONTEND noninteractive
+
+# Download and install the required dependencies
+RUN apt-get -y update && \
+    apt-get -y install \
+        software-properties-common \
+        curl \
+        openjdk-21-jdk-headless
+
+# Load in all of our config files.
+ADD ./start /start
+ADD ./server/server_1.21.4.jar /server.jar
+# Fix all permissions
+RUN chmod +x /start
+RUN chmod +x /server.jar
+
+# 25565 is for minecraft
+EXPOSE 25565
+
+# /start runs it.
+CMD ["/start"]

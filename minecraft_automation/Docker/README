@@ -1,0 +1,6 @@
+This is the docker you need to build
+you can either run the docker_build.sh file or build it yourself
+change <YOUR VERSION HERE> you your version, for example - docker build -t mc/minecraft_v1.24.6 .
+if you want change the dockers tag, you will need to change it in the scripts accordingly
+
+put a jar file ./server directory and change in the dockerfile the version to the correct one.
