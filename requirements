@@ -1,4 +1,4 @@
 docker
 python3 and the following modules -
 
-json requests os sys subprocess fastapi pydantic
+pip install json requests os sys subprocess fastapi pydantic
