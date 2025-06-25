@@ -1,5 +1,5 @@
 # MinecraftServerAutomation
-Open minecraft servers vi API using dockers.
+Open minecraft servers via API using dockers.
 
 Follow instructions under every folder to start your own minecraft server farm.
 
