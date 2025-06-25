@@ -1,6 +1,7 @@
 # set min and max port
 
-yourIP=<enterIP>
+yourIP=$(curl https://ipinfo.io/ip > /dev/null)
+echo $yourIP
 min=25000
 max=25006
 
@@ -49,7 +50,7 @@ docker run -d --name=mc_$port -p $port:25565 -v /worlds/minecraft_$port:/data mc
 # give the user op permissions
 echo "Let me know your Minecraft Username so i can give you OP permissions:"
 read username
-python3 ./give_op.py "$port" "$username"
+python3 ./give_op_whitelist.py "$port" "$username"
 
 sleep 5
 while [ ! -f "/worlds/minecraft_$port/server.properties" ]; do

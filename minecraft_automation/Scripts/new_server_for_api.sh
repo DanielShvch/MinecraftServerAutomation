@@ -3,7 +3,7 @@
 username=$1
 versionUser=$2
 versionAvailable=("1.21.4" "1.21.6")
-yourIP=<EnterIP>
+yourIP=$(curl https://ipinfo.io/ip)
 min=25000
 max=25006
 
