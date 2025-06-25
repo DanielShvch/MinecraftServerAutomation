@@ -1,7 +1,5 @@
 Change the .env file to a token of your wish, this token will be used for authentication.
 make sure the user which runs the API has read access to this file, no one else should have it.
-Alos, notice in /Script folder, some scripts have a yourIP variable at the start, change it to yours.
-
 
 curl request should be - 
 
