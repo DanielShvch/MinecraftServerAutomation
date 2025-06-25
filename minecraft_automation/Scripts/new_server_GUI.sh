@@ -1,6 +1,6 @@
 # set min and max port
 
-
+yourIP=<enterIP>
 min=25000
 max=25006
 
@@ -64,7 +64,7 @@ docker restart mc_$port
 #conclude
 if [ $? -eq 0 ]; then
 	echo "Your server is Up and running!"
-	echo "You can add your minecraft server with IP: 129.159.153.50:$port"
+	echo "You can add your minecraft server with IP: $yourIP:$port"
 	echo "$username , Have Fun!"
 	echo " "
 	echo "If you have any issues with this server, Feel free to contact us!"
