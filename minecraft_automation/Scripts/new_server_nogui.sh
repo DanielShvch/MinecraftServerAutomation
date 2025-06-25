@@ -5,6 +5,7 @@ versionUser=$2
 versionAvailable=("1.21.4" "1.21.6")
 min=25000
 max=25006
+yourIP=<yourIP>
 
 if [[ -z "$1" || -z "$2" ]]; then
 	echo "Missing Parameters parameters."
@@ -74,7 +75,7 @@ docker restart mc_$port
 #conclude
 if [ $? -eq 0 ]; then
 	echo "Your server is Up and running!"
-	echo "You can add your minecraft server with IP: 129.159.153.50:$port"
+	echo "You can add your minecraft server with IP: $yourIP:$port"
 	echo "$username , Have Fun!"
 	echo " "
 	echo "If you have any issues with this server, Feel free to contact us!"
